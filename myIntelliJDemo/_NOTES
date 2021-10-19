@@ -1,0 +1,11 @@
+Spring Boot File upload example with Multipart File
+https://www.bezkoder.com/spring-boot-file-upload/
+
+Upload files to the @ModelAttribute using Thymeleaf
+https://stackoverflow.com/questions/47476733/upload-files-to-the-modelattribute-using-thymeleaf
+
+Uploading and downloading files using Spring Boot REST API
+https://attacomsian.com/blog/uploading-files-spring-boot
+
+How to delete a file or directory in Java
+https://www.callicoder.com/java-delete-file/

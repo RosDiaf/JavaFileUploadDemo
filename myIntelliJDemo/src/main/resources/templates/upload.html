@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/header :: header"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Upload File</h1>
+            <form th:action="@{/uploading}" th:object="${fileInfo}" method="POST" enctype="multipart/form-data">
+                <label for="name" class="form-label">File</label>
+                <input type="file"
+                       id="name"
+                       multiple
+                       name="name"
+                       value="name"
+                       class="form-control"
+                       aria-describedby="fileHelpBlock"
+                       field="*{name}">
+
+                <label for="url" class="form-label">URL</label>
+                <input type="text"
+                       id="url"
+                       class="form-control"
+                       aria-describedby="urlHelpBlock"
+                       field="*{url}">
+                <div id="fileHelpBlock" class="form-text">
+                    Your File must be max-file-size=500KB
+                </div>
+                <div class="mt-4">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </div>
+                <p th:text="${message}"></p>
+            </form>
+        </div>
+        <div class="row">
+            <h3>Files: </h3>
+            <ul th:each="name : ${OriginalFileNames}">
+                <li th:text="${name}"></li>
+            </ul>
+        </div>
+        <div class="row">
+            <h3>Files Info:</h3>
+            <p th:each="item : ${fileNameList}"></p>
+            - <p th:text="${item}"></p>
+            <p th:text="${UrlNameList}"></p>
+        </div>
+    </div>
+</div>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>
